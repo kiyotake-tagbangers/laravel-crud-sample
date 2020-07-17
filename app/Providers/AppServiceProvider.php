@@ -27,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
         if (! is_dir(config('view.compiled'))) {
             mkdir(config('view.compiled'), 0755, true);
         }
+        \URL::forceRootUrl(\Config::get('app.url'));
     }
 }

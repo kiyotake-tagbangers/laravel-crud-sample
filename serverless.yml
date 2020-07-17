@@ -4,6 +4,12 @@ provider:
   name: aws
   region: ap-northeast-1
   runtime: provided
+  vpc:
+    securityGroupIds:
+      - sg-0eb32b02bcc3424c7 # Create before by management console
+    subnetIds:
+      - subnet-0c02b863bef4b88e2 # create before by Terraform
+      - subnet-0d76806dc0578fda6 # create before by Terraform
 
 plugins:
   - ./vendor/bref/bref

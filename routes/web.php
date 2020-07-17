@@ -18,3 +18,12 @@ Route::get('/', function () {
 });
 
 Route::resource('products','ProductController');
+// Route::domain(config('domain.products'))->name('products.')->prefix('dev/products')->group(function() {
+//     Route::get('/', 'ProductController@index')->name('index');
+//     Route::post('/', 'ProductController@store')->name('store');
+//     Route::get('create', 'ProductController@create')->name('create');
+//     Route::get('{product}', 'ProductController@show')->name('show');
+//     Route::patch('{product}', 'ProductController@update')->name('update');
+//     Route::delete('{product}', 'ProductController@destroy')->name('destroy');
+//     Route::get('{product}/edit', 'ProductController@edit')->name('edit');
+// });
