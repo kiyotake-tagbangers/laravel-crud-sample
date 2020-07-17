@@ -6,10 +6,10 @@ provider:
   runtime: provided
   vpc:
     securityGroupIds:
-      - sg-0eb32b02bcc3424c7 # Create before by management console
+      - sg-09f746aad75eccadc # prd-giftee-goto-bastion
     subnetIds:
-      - subnet-0c02b863bef4b88e2 # create before by Terraform
-      - subnet-0d76806dc0578fda6 # create before by Terraform
+      - subnet-0561fd9fffe28c7b5 # prd-giftee-goto-protected-d
+      - subnet-0b497e365c6cf695c # prd-giftee-goto-protected-c
 
 plugins:
   - ./vendor/bref/bref
