@@ -6,10 +6,10 @@ provider:
   runtime: provided
   vpc:
     securityGroupIds:
-      - sg-09f746aad75eccadc # prd-giftee-goto-bastion
+      - sg-09f746aad75eccadc
     subnetIds:
-      - subnet-0561fd9fffe28c7b5 # prd-giftee-goto-protected-d
-      - subnet-0b497e365c6cf695c # prd-giftee-goto-protected-c
+      - subnet-0561fd9fffe28c7b5
+      - subnet-0b497e365c6cf695c
 
 plugins:
   - ./vendor/bref/bref
@@ -37,3 +37,7 @@ functions:
     layers:
       - ${bref:layer.php-74} # PHP
       - ${bref:layer.console} # The "console" layer
+    events:
+      - schedule:
+          rate: rate(1 minute) # see https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html
+          input: '"schedule:run"' # artisan commands
